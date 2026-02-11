@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GitHub - Branching & Collaboration</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for branching slide */
+        .branch-visual-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            height: 200px;
+        }
+
+        .branch-diagram {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            position: relative;
+        }
+
+        .main-branch-line {
+            width: 80%;
+            height: 4px;
+            background: #2ea44f;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .branch-point {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border: 3px solid #2ea44f;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            z-index: 2;
+        }
+
+        .feature-branches {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+        }
+
+        .feature-branch {
+            background: #f6f8fa;
+            border: 2px solid #0366d6;
+            border-radius: 5px;
+            padding: 8px 15px;
+            margin: 5px;
+            text-align: center;
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .feature-branch::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            height: 20px;
+            width: 2px;
+            background: #0366d6;
+        }
+
+        .git-commands {
+            background: #0d1117;
+            color: #c9d1d9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+
+        .command {
+            margin: 0.5rem 0;
+        }
+
+        .command-comment {
+            color: #8b949e;
+            font-style: italic;
+        }
+
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .step {
+            background: #f6f8fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #0366d6;
+        }
+
+        .step-number {
+            background: #0366d6;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .best-practices {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .practice-good, .practice-bad {
+            flex: 1;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .practice-good {
+            background: #dafbe1;
+            border: 2px solid #2ea44f;
+        }
+
+        .practice-bad {
+            background: #ffdcd7;
+            border: 2px solid #cf222e;
+        }
+
+        .practice-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .emoji-good { color: #2ea44f; }
+        .emoji-bad { color: #cf222e; }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container">
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <button onclick="previousSlide()">← Previous</button>
+            <span class="slide-info">Slide 6 of 7</span>
+            <button onclick="nextSlide()">Next →</button>
+        </div>
+
+        <!-- Slide Content -->
+        <div class="slide-content">
+            <h1>Branching & Collaboration</h1>
+            <p class="slide-subtitle">Working together without conflicts</p>
+
+            <!-- Section 1: What are branches? -->
+            <section class="slide-section">
+                <h2>🌿 What Are Branches?</h2>
+                <p>Branches allow you to work on different versions of your project simultaneously.</p>
+                
+                <div class="branch-visual-container">
+                    <div class="branch-diagram">
+                        <div class="feature-branches">
+                            <div class="feature-branch" style="left: -120px;">feature/login</div>
+                            <div class="feature-branch" style="left: 0px;">feature/header</div>
+                            <div class="feature-branch" style="left: 120px;">bugfix/typo</div>
+                        </div>
+                        <div class="main-branch-line">
+                            <div class="branch-point"></div>
+                        </div>
+                        <div style="margin-top: 40px; color: #2ea44f; font-weight: bold;">main branch</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Branch Commands -->
+            <section class="slide-section">
+                <h2>💻 Working with Branches</h2>
+                <div class="git-commands">
+                    <div class="command">git branch <span class="command-comment"># List all branches</span></div>
+                    <div class="command">git branch feature/login <span class="command-comment"># Create new branch</span></div>
+                    <div class="command">git checkout feature/login <span class="command-comment"># Switch to branch</span></div>
+                    <div class="command">git checkout -b feature/login <span class="command-comment"># Create & switch</span></div>
+                    <div class="command">git push -u origin feature/login <span class="command-comment"># Push branch to GitHub</span></div>
+                </div>
+            </section>
+
+            <!-- Section 3: Collaboration Workflow -->
+            <section class="slide-section">
+                <h2>🤝 Team Collaboration Workflow</h2>
+                <div class="workflow-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Create Branch</h3>
+                        <p>Create a feature branch from main</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Make Changes</h3>
+                        <p>Work on your feature independently</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Push & Pull Request</h3>
+                        <p>Push to GitHub and create a PR</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Review & Merge</h3>
+                        <p>Team reviews code, then merges to main</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Best Practices -->
+            <section class="slide-section">
+                <h2>✅ Best Practices</h2>
+                <div class="best-practices">
+                    <div class="practice-good">
+                        <div class="practice-title">
+                            <span class="emoji-good">✅</span> Do This
+                        </div>
+                        <ul>
+                            <li>Use descriptive names: <code>feature/login-page</code></li>
+                            <li>Keep branches short-lived</li>
+                            <li>Delete merged branches</li>
+                            <li>Sync with main regularly</li>
+                        </ul>
+                    </div>
+                    <div class="practice-bad">
+                        <div class="practice-title">
+                            <span class="emoji-bad">❌</span> Avoid This
+                        </div>
+                        <ul>
+                            <li>Commit directly to main</li>
+                            <li>Vague names: <code>test</code>, <code>branch1</code></li>
+                            <li>Long-running feature branches</li>
+                            <li>Merging without review</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Navigation Progress -->
+        <div class="slide-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 85.7%;"></div>
+            </div>
+            <div class="navigation-links">
+                <a href="workflow.html">← Core Git Workflow</a>
+                <a href="documentation.html">Documentation & Best Practices →</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Slide navigation for branching.html
+        function previousSlide() {
+            window.location.href = 'workflow.html';
+        }
+
+        function nextSlide() {
+            window.location.href = 'documentation.html';
+        }
+    </script>
+</body>
+</html>
