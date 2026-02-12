@@ -1,29 +1,166 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Presentation - Index</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        h1 { color: #24292e !important; }
+        .subtitle { color: #57606a !important; }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            width: 100%;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+
+        .module-item {
+            background-color: #f6f8fa; 
+            border: 1px solid #d0d7de; 
+            border-left-width: 6px;    
+            border-left-style: solid;
+            
+            
+            border-radius: 8px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-item:hover {
+            background-color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .module-item i {
+            font-size: 1.4rem;
+            width: 35px;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .module-item:hover i {
+            transform: scale(1.15);
+        }
+
+        .module-text {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #24292e;
+        }
+
+        .module-item:last-child {
+            grid-column: span 2;
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        .module-item:nth-child(1) { border-left-color: #054c9c; }
+        .module-item:nth-child(1) i { color: #054c9c; }
+
+        .module-item:nth-child(2) { border-left-color: #9b4a11; }
+        .module-item:nth-child(2) i { color: #9b4a11; }
+
+        .module-item:nth-child(3) { border-left-color: #0c7955; }
+        .module-item:nth-child(3) i { color: #0c7955; }
+
+        .module-item:nth-child(4) { border-left-color: #5f40a9; }
+        .module-item:nth-child(4) i { color: #5f40a9; }
+
+        .module-item:nth-child(5) { border-left-color: #087b8f; }
+        .module-item:nth-child(5) i { color: #087b8f; }
+
+        .module-item:nth-child(6) { border-left-color: #972f63; }
+        .module-item:nth-child(6) i { color: #972f63; }
+
+        .module-item:nth-child(7) { border-left-color: #4546a2; }
+        .module-item:nth-child(7) i { color: #4546a2; }
+
+    </style>
 </head>
 <body>
 
-    <div class="slide-container">
-        
-        <h1>How to create a web project using GitHub</h1>
-        <p class="subtitle">Group Presentation Index</p>
-
-        <ul class="topic-list">
-            <li>1. Introduction to GitHub</li>
-            <li>2. Basic Version Control Concepts</li>
-            <li>3. Creating a GitHub Repository</li>
-            <li>4. Cloning & Project Setup</li>
-            <li>5. Core Git Workflow</li>
-            <li>6. Branching & Collaboration</li>
-            <li>7. Documentation & Best Practices</li>
-        </ul>
-
-        <button id="startBtn" onclick="startPresentation()">Start Presentation</button>
-
+    <div class="overlay"></div>
+    <div class="backgraund">
+        <video autoplay loop muted>
+            <source src="media/Video.mp4" type="video/mp4">
+        </video>
     </div>
 
-    <script src="script.js"></script>
+    <div class="slide-container">
+
+        <div class="slide active">
+            <h1><i class="fab fa-github" style="color: #24292e; margin-right: 10px;"></i> How to create a web project by using GitHub</h1>
+            
+
+            <div class="module-grid">
+                
+                <div class="module-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span class="module-text">1. Introduction to GitHub</span>
+                </div>
+
+                <div class="module-item">
+                    <i class="fas fa-code-branch"></i>
+                    <span class="module-text">2. Basic Version Control</span>
+                </div>
+
+                <div class="module-item">
+                    <i class="fas fa-plus-square"></i>
+                    <span class="module-text">3. Creating a Repository</span>
+                </div>
+
+                <div class="module-item">
+                    <i class="fas fa-download"></i>
+                    <span class="module-text">4. Cloning & Project Setup</span>
+                </div>
+
+                <div class="module-item">
+                    <i class="fas fa-sync-alt"></i>
+                    <span class="module-text">5. Core Git Workflow</span>
+                </div>
+
+                <div class="module-item">
+                    <i class="fas fa-code-fork"></i>
+                    <span class="module-text">6. Branching & Collaboration</span>
+                </div>
+
+                <div class="module-item">
+                    <i class="fas fa-book"></i>
+                    <span class="module-text">7. Documentation & Best Practices</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="navigation" style="display: none;">
+            <button id="prevBtn" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <span class="slide-counter">
+                <span id="currentSlide">1</span> / 1
+            </span>
+            <button id="nextBtn" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
