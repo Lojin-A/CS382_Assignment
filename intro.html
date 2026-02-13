@@ -6,9 +6,44 @@
     <title>Introduction to GitHub</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Animation for the logo */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); } /* start and end at original position */
+            50% { transform: translateY(-15px); } /* float up by 15px at the midpoint */
+        }
+        .float-icon { 
+            font-size: 3rem; /* icon size */
+             margin-bottom: 20px; /* space under logo */
+              color: #0969da; 
+            animation: float 3s ease-in-out infinite; /* float for 3s slow-fast-slow infenitily*/
+        }
+        .comparison-container { /* w/o this, the boxes will be stacked on top of e/o */ 
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+            text-align: left;
+        }
+        /*last slide design*/
+        .box { padding: 20px; border-radius: 15px; border: 1px solid; }
+        .box-chaos { background-color: #ffebe9; border-color: #ff8182; }
+        .box-success { background-color: #dafbe1; border-color: #4ac26b; }
+        .box h4 { margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        
+        .chaos-text { color: #cf222e; } 
+        .success-text { color: #1a7f37; }
+
+        /*list items style*/
+        .list-unstyled { list-style: none; padding-left: 0; }
+        .list-unstyled li { margin-bottom: 12px; }
+        .icon-blue { color: #0969da; width: 25px; }
+    </style>
 </head>
+
 <body>
-    <!-- Body video bg -->
+    <!-- Bg video -->
     <div class="overlay"></div>
     <div class="background-container"> 
         <video autoplay loop muted>
@@ -16,121 +51,122 @@
         </video>
     </div>
 
-<!-- Home page btn-->
+    <!--Go home on top of the page-->
     <div class="slide-container">
         <div class="home-btn" onclick="goToHome()" style="z-index: 101;">
-            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
-                 alt="GitHub Logo" class="github-logo">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" class="github-logo">
         </div>
 
-<!--Main slide-->
+        <!-- Slide 1-->
         <div class="slide active">
-            <i class="fab fa-github" style="font-size: 3rem; margin-bottom: 20px; color: #0969da;"></i>
+            <i class="fab fa-github float-icon"></i> <!--floatign style-->
             <h1>Introduction to GitHub</h1>
             <p class="subtitle">GitHub: Where the World Builds Software!</p>
             <p class="small-text" style="color: #569ef0;">Norah Alhosain</p>
         </div>
-<!-- slide 1 -->
+
+        <!-- slide 2-->
         <div class="slide">
             <h2>What is GitHub?</h2>
-
-            <ul style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 10px;"><i class="fas fa-cloud" style="color: #0969da; width: 25px;"></i>
+            <ul class="list-unstyled">
+                <li><i class="fas fa-cloud icon-blue"></i> 
                     <strong>GitHub</strong> is a cloud-based hosting platform for version control and collaboration</li>
-
-                <li style="margin-bottom: 10px;"><i class="fas fa-code-branch" style="color: #0969da; width: 25px;"></i> 
+                <li><i class="fas fa-code-branch icon-blue"></i> 
                     It allows developers to store and manage their code repositories online</li>
-
-                <li style="margin-bottom: 10px;"><i class="fas fa-users" style="color: #0969da; width: 25px;"></i> 
+                <li><i class="fas fa-users icon-blue"></i> 
                     Enables teams to collaborate on projects from anywhere in the world</li>
-
-                <li style="margin-bottom: 10px;"><i class="fas fa-tools" style="color: #0969da; width: 25px;"></i>
-                    Provides tools for code review, project management, and documentation</li>
-
-                <li style="margin-bottom: 10px;"><i class="fas fa-globe" style="color: #0969da; width: 25px;"></i> 
-                    Home to over 100 million developers and 330 million repositories</li>
+                <li><i class="fas fa-tools icon-blue"></i> 
+                    Provides tools for code review and project management</li>
+                <li><i class="fas fa-globe icon-blue"></i>
+                     Home to 180M+ developers and 420M+ repositories</li>
             </ul>
         </div>
 
-        <!--slide 2-->
+
         <div class="slide">
             <h2>Git vs GitHub</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px;">
-                
+            <div style="display: grid; 
+             grid-template-columns: 1fr 1fr; 
+             gap: 30px;
+              margin-top: 30px;"> <!-- Dom't stack, create 2 pieces-->
                 <div>
-                    <h3 style="color: #0969da; margin-bottom: 15px;"><i class="fas fa-laptop-code"></i> Git</h3>
-                    <ul style="padding-left: 20px; list-style: none;">
-
-                        <li><i class="fas fa-check" style="font-size: 0.8rem; color: #2ea043;"></i>
-                             Version control system</li>
-
-                        <li><i class="fas fa-check" style="font-size: 0.8rem; color: #2ea043;"></i> 
-                            Installed locally</li>
-
-                        <li><i class="fas fa-check" style="font-size: 0.8rem; color: #2ea043;"></i> 
-                            Tracks changes in files</li>
-
-                        <li><i class="fas fa-check" style="font-size: 0.8rem; color: #2ea043;"></i>
-                             Works offline</li>
+                    <h3 style="color: #0969da;"><i class="fas fa-laptop-code"></i> Git</h3>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check success-text"></i> Version control system</li>
+                        <li><i class="fas fa-check success-text"></i> Installed locally</li>
+                        <li><i class="fas fa-check success-text"></i> Tracks changes in files</li>
+                        <li><i class="fas fa-check success-text"></i> Works offline</li>
                     </ul>
                 </div>
-
-                <!-- Slide 3-->
                 <div>
-                    <h3 style="color: #0969da; margin-bottom: 15px;"><i class="fab fa-github-alt"></i>
-                         GitHub</h3>
-                    <ul style="padding-left: 20px; list-style: none;">
-
-                        <li><i class="fas fa-check" style="font-size: 0.8rem; color: #2ea043;"></i> 
-                            Cloud hosting platform</li>
-
-                        <li><i class="fas fa-check" style="font-size: 0.8rem; color: #2ea043;"></i>
-                             Web-based service</li>
-
-                        <li><i class="fas fa-check" style="font-size: 0.8rem; color: #2ea043;"></i> 
-                            Hosts Git repositories</li>
-
-                        <li><i class="fas fa-check" style="font-size: 0.8rem; color: #2ea043;"></i> 
-                            Requires internet</li>
+                    <h3 style="color: #0969da;"><i class="fab fa-github-alt"></i> GitHub</h3>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check success-text"></i> Cloud hosting platform</li>
+                        <li><i class="fas fa-check success-text"></i> Web-based service</li>
+                        <li><i class="fas fa-check success-text"></i> Hosts Git repositories</li>
+                        <li><i class="fas fa-check success-text"></i> Requires internet</li>
                     </ul>
                 </div>
             </div>
         </div>
- <!-- Last slide-->
+
         <div class="slide">
- <h2>Why GitHub is Used in Web Development</h2>
+            <h2>Why GitHub is Used in Web Development</h2>
+            <ul class="list-unstyled">
+                <li><i class="fas fa-history icon-blue"></i> 
+                    <span class="highlight">Version Control:</span>
+                     Track every change made to your code</li>
 
-            <ul style="list-style: none; padding-left: 0;">
+                <li><i class="fas fa-user-friends icon-blue"></i> 
+                    <span class="highlight">Collaboration:</span> 
+                    Multiple developers work simultaneously</li>
 
-                <li style="margin-bottom: 12px;"><i class="fas fa-history" style="color: #0969da; width: 25px;"></i> 
-                    <span class="highlight">Version Control:</span> Track every change made to your code with complete history</li>
+                <li><i class="fas fa-cloud-upload-alt icon-blue"></i> 
+                    <span class="highlight">Backup:</span>
+                     Safe cloud storage with easy recovery</li>
 
-                <li style="margin-bottom: 12px;"><i class="fas fa-user-friends" style="color: #0969da; width: 25px;"></i> 
-                    <span class="highlight">Collaboration:</span> Multiple developers can work on the same project simultaneously</li>
+                <li><i class="fas fa-briefcase icon-blue"></i> 
+                    <span class="highlight">Portfolio:</span>
+                     Showcase projects to employers</li>
 
-                <li style="margin-bottom: 12px;"><i class="fas fa-cloud-upload-alt" style="color: #0969da; width: 25px;"></i> 
-                    <span class="highlight">Backup & Recovery:</span> Your code is safely stored in the cloud with easy rollback options</li>
-
-                <li style="margin-bottom: 12px;"><i class="fas fa-briefcase" style="color: #0969da; width: 25px;"></i> 
-                    <span class="highlight">Portfolio:</span> Showcase your projects to potential employers and clients</li>
-
-                <li style="margin-bottom: 12px;"><i class="fas fa-terminal" style="color: #0969da; width: 25px;"></i> 
-                    <span class="highlight">Open Source:</span> Contribute to and learn from millions of open-source projects</li>
-
-                <li style="margin-bottom: 12px;"><i class="fas fa-rocket" style="color: #0969da; width: 25px;"></i>
-                     <span class="highlight">Deployment:</span> Integrate with hosting platforms for automatic deployments</li>
+                <li><i class="fas fa-rocket icon-blue"></i> 
+                    <span class="highlight">Deployment:</span> 
+                    Automatic deployments to hosting platforms</li>
             </ul>
         </div>
 
-        <div class="navigation">
+        <div class="slide">
+            <h2 style="color: #0969da;">The Group Project Struggle</h2>
+            
+            <div class="comparison-container">
+                <div class="box box-chaos">
+                    <h4 class="chaos-text"><i class="fas fa-bomb"></i> Manual Sharing</h4>
+                    <ul class="list-unstyled" style="font-size: 0.95rem;">
+                        <li><i class="fas fa-times-circle chaos-text"></i> Sent via WhatsApp</li>
+                        <li><span class="code-block">project_finalfinal6.html</span></li>
+                        <li><i class="fas fa-exclamation-triangle chaos-text"></i> Overwriting work</li>
+                    </ul>
+                </div>
+                <div class="box box-success">
+                    <h4 class="success-text"><i class="fas fa-check-circle"></i> With Git & GitHub</h4>
+                    <ul class="list-unstyled" style="font-size: 0.95rem;">
+                        <li><i class="fas fa-code-branch success-text"></i> Work on your own "Branch"</li>
+                        <li><i class="fas fa-history success-text"></i> Every change is tracked</li>
+                        <li><i class="fas fa-layer-group success-text"></i> Merge changes safely</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+           <div class="navigation">
             <button id="prevBtn" onclick="changeSlide(-1)">
-                <i class="fas fa-arrow-left"></i> Previous
+                <i class="fas fa-chevron-left"></i>
             </button>
             <span class="slide-counter">
-                <span id="currentSlide">1</span> / <span id="totalSlides">4</span>
+                <span id="currentSlide">1</span> / 5
             </span>
             <button id="nextBtn" onclick="changeSlide(1)">
-                Next <i class="fas fa-arrow-right"></i>
+                <i class="fas fa-chevron-right"></i>
             </button>
         </div>
     </div>
