@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="js/script.js">
+
+  
+    <title>Preparing Local Environment - GitHub</title>
+    <style>     
+img {
+    width: 250px;      
+    height: auto;      
+    max-width: 100%;   
+}
+
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+  <div class="backgraund">
+    <video autoplay loop muted >
+<source src="media/Video.mp4" type="video/mp4"></video>
+</video>
+  </div>
+    <div class="slide-container">
+    <div class="home-btn" onclick="goToHome()" style="z-index: 101;">
+       <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+         alt="GitHub Logo" class="github-logo">
+</div>
+
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <h1>    <i class="fas fa-bullseye" style="color: #0969da;"></i>
+                Preparing the Local Environment</h1>
+            <p class="subtitle">Connecting GitHub with Your Coding Environment</p>
+            <p class="small-text">Shahad Alromi</p>
+        </div>
+
+        <!-- Slide 2: What is Cloning -->
+        <div class="slide">
+            <h2>What is Cloning?</h2>
+            <ul>
+                <li><strong>Cloning</strong> = downloading a copy of the repository to your local machine</li>
+                <li>Work on files locally using your preferred IDE/editor</li>
+                <li><strong>HTTPS method</strong> (simple and beginner-friendly)</li>
+                <li>Creates a linked copy between GitHub and your computer</li>
+            </ul>
+        </div>
+
+        <!-- Slide 3: How to Clone -->
+        <div class="slide">
+            <h2>Cloning Using HTTPS</h2>
+            <ol>
+                <li>Go to your repository on GitHub</li>
+                <li>Click the green <span class="highlight">"Code"</span> button</li>
+                <li>Copy the HTTPS URL</li>
+                <img src="HTTPS.jpg">
+                <li>Open terminal and navigate to desired folder</li>
+                <li>Run: <code>git clone [URL]</code></li>
+            </ol>
+
+        </div>
+
+        <!-- Slide 4: Project Structure -->
+        <div class="slide">
+            <h2>Typical Web Project Structure</h2>
+            <div class="folder-tree">
+my-web-project/<br>
+├── index.html          (Homepage)<br>
+├── style.css           (Styling)<br>
+├── script.js           (JavaScript)<br>
+├── images/             (Image folder)<br>
+├── README.md           (Documentation)<br>
+└── .gitignore          (Files to ignore)
+            </div>
+            <ul style="font-size: 1rem;">
+                <li>Keep files organized with clear naming</li>
+                <li>Start simple, expand as needed</li>
+            </ul>
+        </div>
+
+        <!-- Slide 5: Initial Files -->
+        <div class="slide">
+            <h2>Creating Your First Files</h2>
+            <p class="small-text">Create basic web files in your local project folder:</p>
+            <ul style="font-size: 1rem;">
+                <li><code>index.html</code> (main page)</li>
+                <li><code>style.css</code> (styling)</li>
+                <li><code>index.php</code> (for PHP projects)</li>
+            </ul>
+            <div class="code-block" style="font-size: 0.85rem;">
+&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="en"&gt;<br>
+&lt;head&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My Web Project&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Welcome to My Project&lt;/h1&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button id="prevBtn" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <span class="slide-counter">
+                <span id="currentSlide">1</span> / 5
+            </span>
+            <button id="nextBtn" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
