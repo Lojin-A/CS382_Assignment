@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to GitHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Body video bg -->
+    <div class="overlay"></div>
+    <div class="background-container"> 
+        <video autoplay loop muted>
+            <source src="media/Video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+<!-- Home page btn-->
+    <div class="slide-container">
+        <div class="home-btn" onclick="goToHome()" style="z-index: 101;">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+                 alt="GitHub Logo" class="github-logo">
+        </div>
+
+<!--Main slide-->
+        <div class="slide active">
+            <i class="fab fa-github" style="font-size: 3rem; margin-bottom: 20px; color: #0969da;"></i>
+            <h1>Introduction to GitHub</h1>
+            <p class="subtitle">GitHub: Where the World Builds Software!</p>
+            <p class="small-text" style="color: #569ef0;">Norah Alhosain</p>
+        </div>
+<!-- slide 1 -->
+        <div class="slide">
+            <h2>What is GitHub?</h2>
+
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 10px;"><i class="fas fa-cloud" style="color: #0969da; width: 25px;"></i>
+                    <strong>GitHub</strong> is a cloud-based hosting platform for version control and collaboration</li>
+
+                <li style="margin-bottom: 10px;"><i class="fas fa-code-branch" style="color: #0969da; width: 25px;"></i> 
+                    It allows developers to store and manage their code repositories online</li>
+
+                <li style="margin-bottom: 10px;"><i class="fas fa-users" style="color: #0969da; width: 25px;"></i> 
+                    Enables teams to collaborate on projects from anywhere in the world</li>
+
+                <li style="margin-bottom: 10px;"><i class="fas fa-tools" style="color: #0969da; width: 25px;"></i>
+                    Provides tools for code review, project management, and documentation</li>
+
+                <li style="margin-bottom: 10px;"><i class="fas fa-globe" style="color: #0969da; width: 25px;"></i> 
+                    Home to over 100 million developers and 330 million repositories</li>
+            </ul>
+        </div>
+
+        <!--slide 2-->
+        <div class="slide">
+            <h2>Git vs GitHub</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px;">
+                
+                <div>
+                    <h3 style="color: #0969da; margin-bottom: 15px;"><i class="fas fa-laptop-code"></i> Git</h3>
+                    <ul style="padding-left: 20px; list-style: none;">
+
+                        <li><i class="fas fa-check" style="font-size: 0.8rem; color: #2ea043;"></i>
+                             Version control system</li>
+
+                        <li><i class="fas fa-check" style="font-size: 0.8rem; color: #2ea043;"></i> 
+                            Installed locally</li>
+
+                        <li><i class="fas fa-check" style="font-size: 0.8rem; color: #2ea043;"></i> 
+                            Tracks changes in files</li>
+
+                        <li><i class="fas fa-check" style="font-size: 0.8rem; color: #2ea043;"></i>
+                             Works offline</li>
+                    </ul>
+                </div>
+
+                <!-- Slide 3-->
+                <div>
+                    <h3 style="color: #0969da; margin-bottom: 15px;"><i class="fab fa-github-alt"></i>
+                         GitHub</h3>
+                    <ul style="padding-left: 20px; list-style: none;">
+
+                        <li><i class="fas fa-check" style="font-size: 0.8rem; color: #2ea043;"></i> 
+                            Cloud hosting platform</li>
+
+                        <li><i class="fas fa-check" style="font-size: 0.8rem; color: #2ea043;"></i>
+                             Web-based service</li>
+
+                        <li><i class="fas fa-check" style="font-size: 0.8rem; color: #2ea043;"></i> 
+                            Hosts Git repositories</li>
+
+                        <li><i class="fas fa-check" style="font-size: 0.8rem; color: #2ea043;"></i> 
+                            Requires internet</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+ <!-- Last slide-->
+        <div class="slide">
+ <h2>Why GitHub is Used in Web Development</h2>
+
+            <ul style="list-style: none; padding-left: 0;">
+
+                <li style="margin-bottom: 12px;"><i class="fas fa-history" style="color: #0969da; width: 25px;"></i> 
+                    <span class="highlight">Version Control:</span> Track every change made to your code with complete history</li>
+
+                <li style="margin-bottom: 12px;"><i class="fas fa-user-friends" style="color: #0969da; width: 25px;"></i> 
+                    <span class="highlight">Collaboration:</span> Multiple developers can work on the same project simultaneously</li>
+
+                <li style="margin-bottom: 12px;"><i class="fas fa-cloud-upload-alt" style="color: #0969da; width: 25px;"></i> 
+                    <span class="highlight">Backup & Recovery:</span> Your code is safely stored in the cloud with easy rollback options</li>
+
+                <li style="margin-bottom: 12px;"><i class="fas fa-briefcase" style="color: #0969da; width: 25px;"></i> 
+                    <span class="highlight">Portfolio:</span> Showcase your projects to potential employers and clients</li>
+
+                <li style="margin-bottom: 12px;"><i class="fas fa-terminal" style="color: #0969da; width: 25px;"></i> 
+                    <span class="highlight">Open Source:</span> Contribute to and learn from millions of open-source projects</li>
+
+                <li style="margin-bottom: 12px;"><i class="fas fa-rocket" style="color: #0969da; width: 25px;"></i>
+                     <span class="highlight">Deployment:</span> Integrate with hosting platforms for automatic deployments</li>
+            </ul>
+        </div>
+
+        <div class="navigation">
+            <button id="prevBtn" onclick="changeSlide(-1)">
+                <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <span class="slide-counter">
+                <span id="currentSlide">1</span> / <span id="totalSlides">4</span>
+            </span>
+            <button id="nextBtn" onclick="changeSlide(1)">
+                Next <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
