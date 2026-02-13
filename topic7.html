@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Topic 7 - Documentation & Best Practices</title>
+<link rel="stylesheet" href="css/style.css">
+  
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <div class="backgraund">
+    <video autoplay loop muted>
+      <source src="Video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="slide-container">
+    <div class="home-btn" onclick="goToHome()" style="z-index: 101;">
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+           alt="GitHub Logo" class="github-logo">
+    </div>
+
+    <!-- Slide 1 -->
+    <div class="slide active">
+      <h1>📘 Documentation & Best Practices</h1>
+      <p class="subtitle">How to keep your repository clear, organized, and easy to understand.</p>
+      <p class="small-text">Layan Alharbi</p>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+      <h2>What is README.md?</h2>
+      <ul>
+        <li><strong>README.md</strong> explains what your project is.</li>
+        <li>It is the first thing shown on GitHub repository pages.</li>
+        <li>Written in <strong>Markdown</strong> (.md).</li>
+        <li>Helps others understand how to run and use the project.</li>
+      </ul>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+      <h2>Simple README Structure</h2>
+      <ul>
+        <li><span class="highlight">Project Title</span> + short description</li>
+        <li><span class="highlight">Features</span> (what the project can do)</li>
+        <li><span class="highlight">How to Run</span> (steps for the user)</li>
+        <li><span class="highlight">Author</span> and contact (optional)</li>
+      </ul>
+
+      <div class="code-block">
+# My Web Project<br>
+## Description<br>
+Simple website using HTML, CSS, JavaScript.<br><br>
+## How to Run<br>
+1. Clone repo<br>
+2. Open index.html in browser
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <!-- Slide 4: Importance -->
+<div class="slide">
+  <h2>Why Documentation Matters</h2>
+  <p class="small-text">
+    Documentation helps people understand your project faster and reduces mistakes.
+  </p>
+
+  <div class="code-block" style="max-width: 760px;">
+    <div style="display:flex; justify-content:space-between; gap:30px;">
+
+      <!-- LEFT: With -->
+      <div style="width:50%; text-align:left;">
+        <h3 style="margin-bottom:10px; color:#24292e;">
+          ✅ With Documentation
+        </h3>
+        <ul style="padding-left: 20px; margin: 0;">
+          <li>Easy to understand</li>
+          <li>Easy collaboration</li>
+          <li>Professional appearance</li>
+          <li>Faster onboarding</li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: Without -->
+      <div style="width:50%; text-align:left;">
+        <h3 style="margin-bottom:10px; color:#24292e;">
+          ❌ Without Documentation
+        </h3>
+        <ul style="padding-left: 20px; margin: 0;">
+          <li>Confusion</li>
+          <li>Wasted time</li>
+          <li>Hard maintenance</li>
+          <li>Unprofessional</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <p class="small-text" style="margin-top: 10px;">
+    <span class="highlight">Key idea:</span> A clear README saves time and makes teamwork easier.
+  </p>
+</div>
+    <!-- Slide 5 -->
+    <div class="slide">
+      <h2>Best Practices & Mistakes</h2>
+      <ul>
+        <li><strong>Write clear commit messages</strong> (not “update” or "Fix")</li>
+        <li><strong>Use branches</strong> for features, merge when ready</li>
+        <li><strong>Keep main stable</strong> (don’t push unfinished work)</li>
+        <li><strong>Use .gitignore</strong> to avoid uploading unnecessary files</li>
+      </ul>
+
+      <div class="code-block">
+Good commit messages:<br>
+✅ Added contact form validation<br>
+✅ Fixed navbar responsive layout<br>
+✅ Updated README with run steps
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+      <button id="prevBtn" onclick="changeSlide(-1)">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <span class="slide-counter">
+        <span id="currentSlide">1</span> / 5
+      </span>
+
+      <button id="nextBtn" onclick="changeSlide(1)">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const slideCounter = document.getElementById('currentSlide');
+
+    function showSlide(n) {
+      slides.forEach(slide => slide.classList.remove('active'));
+
+      if (n >= totalSlides) currentSlide = totalSlides - 1;
+      else if (n < 0) currentSlide = 0;
+      else currentSlide = n;
+
+      slides[currentSlide].classList.add('active');
+      slideCounter.textContent = currentSlide + 1;
+
+      prevBtn.disabled = currentSlide === 0;
+      nextBtn.disabled = currentSlide === totalSlides - 1;
+    }
+
+    function changeSlide(direction) {
+      showSlide(currentSlide + direction);
+    }
+
+    function goToHome() {
+      // This matches your index style (go back to the gallery/index)
+      window.location.href = "index.html";
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') changeSlide(-1);
+      if (e.key === 'ArrowRight') changeSlide(1);
+    });
+
+    showSlide(0);
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>
