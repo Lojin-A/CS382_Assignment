@@ -25,16 +25,33 @@
 
         .icon-green { color: #4ac26b; width: 25px; }
 
-        .image-box {
+        /* تنسيق الصورة يسار والبوكس يمين */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
             margin-top: 20px;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.2);
         }
-        .image-box img {
+
+        .left-side img {
             width: 100%;
-            display: block;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            max-height: 300px;
+            margin-top: -10px;
         }
+
+        .code-block { 
+            padding: 15px; 
+            border-radius: 12px; 
+            font-family: monospace; 
+            font-size: 1rem; 
+            backdrop-filter: blur(6px); 
+            overflow-x: auto;
+         }
+
     </style>
 </head>
 
@@ -77,10 +94,16 @@
                     Helps you understand what needs to be added or committed</li>
             </ul>
 
-            <div class="code-block">git status</div>
+            <div class="two-column">
+                <div class="left-side">
+                    <img src="media/Git_status1.png" alt="Git Status Example">
+                </div>
 
-            <div class="image-box">
-                <img src="core-workflow-1.png" alt="Git Status Example">
+                <div class="right-side">
+                    <div class="code-block">
+                        git status
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -94,13 +117,17 @@
                     Prepares files for the next commit</li>
             </ul>
 
-            <div class="code-block">
-                git add .<br>
-                git add file.html
-            </div>
+            <div class="two-column">
+                <div class="left-side">
+                    <img src="media/Git_add.png" alt="Git Add Example">
+                </div>
 
-            <div class="image-box">
-                <img src="core-workflow-2.png" alt="Git Add Example">
+                <div class="right-side">
+                    <div class="code-block">
+                        git add .<br>
+                        git add file.html
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -113,10 +140,19 @@
                 <li><i class="fas fa-pen icon-green"></i>
                     Requires a clear and meaningful message</li>
             </ul>
+            
+            <div class="two-column">
+                <div class="left-side">
+                    <img src="media/Git_commit.png" alt="Git Commit Example">
+                </div>
 
-            <div class="code-block">
-                git commit -m "Add workflow section"
+                <div class="right-side">
+                    <div class="code-block">
+                        git commit -m "Message"
+                    </div>
+                </div>
             </div>
+            
         </div>
 
         <!-- Slide 5 -->
