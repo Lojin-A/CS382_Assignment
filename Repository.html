@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating a GitHub Repository</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/repository.css">
+  
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="backgraund">
+        <video autoplay loop muted>
+            <source src="Video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="slide-container">
+        <div class="home-btn" onclick="goToHome()">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                 alt="GitHub Logo" class="github-logo">
+        </div>
+
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <h1> Creating a GitHub Repository</h1>
+            <p class="subtitle">From new repo to README and .gitignore</p>
+            <p class="small-text">Khawlah Almansouri</p>
+        </div>
+
+        <!-- Slide 2: Creating a New Repository -->
+        <div class="slide">
+            <h2>Creating a New Repository</h2>
+            <img src="media/create-repo.png" alt="Create repo page" class="topic-img">
+        </div>
+
+        <!-- Slide 3: Public vs Private -->
+        <div class="slide">
+            <h2>Public vs Private</h2>
+            <ul>
+                <li><strong>Public</strong>: Anyone can view the code; suitable for educational or open‑source projects.</li>
+                <li><strong>Private</strong>: Only you and the people you grant access to can view the code.</li>
+                <li> You can change the repository type later from the settings.</li>
+            </ul>
+            <img src="media/create-repo1.png" alt="Public vs Private" class="topic-img">
+        </div>
+
+        <!-- Slide 4: README.md -->
+        <div class="slide">
+            <h2>README.md</h2>
+            <ul>
+                <li> It’s a file that explains the idea of the project and how to run it.</li>
+                <li> It’s written in Markdown, using things like headings, lists, and links.</li>
+                <li> README.md is automatically displayed on the main page of the repository.</li>
+            </ul>
+         
+  <img src="media/create-repo2.png" alt="README.md example" class="topic-img">
+        </div>
+
+        <!-- Slide 5: .gitignore -->
+        <div class="slide">
+            <h2>.gitignore</h2>
+            <ul>
+                <li> It’s a file that tells Git which files or folders to ignore when you push your code.</li>
+                <li> Useful for keeping sensitive information (like API keys) or unnecessary files (like node_modules) out of your repository.</li>
+                <li> You can create a .gitignore file from scratch or use templates provided by GitHub.</li>
+            </ul>
+          
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button id="prevBtn" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <span class="slide-counter">
+                <span id="currentSlide">1</span> / 5
+            </span>
+            <button id="nextBtn" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+    
+<script src="js/script.js"></script>
+    
+</body>
+</html>
