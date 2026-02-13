@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creating a GitHub Repository</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+   
     <style>
         * {
             margin: 0;
@@ -258,86 +258,41 @@
         <!-- Slide 2: Creating a New Repository -->
         <div class="slide">
             <h2>Creating a New Repository</h2>
-            <ol>
-                <li>اضغطي على زر <span class="highlight">+</span> في أعلى يمين GitHub.</li>
-                <li>اختاري <span class="highlight">New repository</span>.</li>
-                <li>اكتبي اسم المستودع (Repository name).</li>
-                <li>اكتبي وصف بسيط للمشروع (اختياري).</li>
-                <li>اختاري الإعدادات ثم اضغطي <span class="highlight">Create repository</span>.</li>
-            </ol>
-            <!-- مثال صورة لواجهة إنشاء المستودع -->
-            <img src="images/create-repo.png" alt="Create repo page" class="topic-img">
+            <img src="media/create-repo.png" alt="Create repo page" class="topic-img">
         </div>
 
         <!-- Slide 3: Public vs Private -->
         <div class="slide">
             <h2>Public vs Private</h2>
             <ul>
-                <li><strong>Public</strong>: الكل يقدر يشوف الكود، مناسب للمشاريع التعليمية أو open-source.</li>
-                <li><strong>Private</strong>: بس إنتِ والأشخاص اللي تعطيهم صلاحية يقدروا يشوفوا الكود.</li>
-                <li>تقدرين تغيّري نوع الرپوزيتوري لاحقاً من الإعدادات.</li>
+                <li><strong>Public</strong>: Anyone can view the code; suitable for educational or open‑source projects.</li>
+                <li><strong>Private</strong>: Only you and the people you grant access to can view the code.</li>
+                <li> You can change the repository type later from the settings.</li>
             </ul>
-            <img src="images/public-private.png" alt="Public vs Private" class="topic-img">
+            <img src="media/create-repo1.png" alt="Public vs Private" class="topic-img">
         </div>
 
         <!-- Slide 4: README.md -->
         <div class="slide">
             <h2>README.md</h2>
             <ul>
-                <li>هو ملف يشرح فكرة المشروع وكيفية تشغيله.</li>
-                <li>يُكتب بلغة <strong>Markdown</strong> مثل العناوين، القوائم، والروابط.</li>
-                <li>يفضّل اختيار خيار <span class="highlight">Initialize with a README</span> عند إنشاء الرپوزيتوري.</li>
+                <li> It’s a file that explains the idea of the project and how to run it.</li>
+                <li> It’s written in Markdown, using things like headings, lists, and links.</li>
+                <li> README.md is automatically displayed on the main page of the repository.</li>
             </ul>
-            <div class="code-block">
-# Project Title<br>
-Short description of your project.<br><br>
-## Features<br>
-- Feature 1<br>
-- Feature 2<br><br>
-## How to run<br>
-Steps to run the project.
-            </div>
+         
+  <img src="media/create-repo2.png" alt="README.md example" class="topic-img">
         </div>
 
         <!-- Slide 5: .gitignore -->
         <div class="slide">
             <h2>.gitignore</h2>
             <ul>
-                <li>ملف يحدد الملفات والمجلدات اللي Git يتجاهلها (ما يرفعها على GitHub).</li>
-                <li>مفيد لتجاهل ملفات النظام، ملفات الـ IDE، أو الملفات السرية مثل كلمات المرور.</li>
-                <li>تقدرين تختارين قالب جاهز من GitHub حسب نوع المشروع (Node, Python, etc.).</li>
+                <li> It’s a file that tells Git which files or folders to ignore when you push your code.</li>
+                <li> Useful for keeping sensitive information (like API keys) or unnecessary files (like node_modules) out of your repository.</li>
+                <li> You can create a .gitignore file from scratch or use templates provided by GitHub.</li>
             </ul>
-            <div class="code-block">
-# Example .gitignore<br>
-node_modules/<br>
-.env<br>
-.vscode/<br>
-*.log
-            </div>
-        </div>
-
-        <!-- Slide 6: Naming Conventions -->
-        <div class="slide">
-            <h2>Repository Naming Conventions</h2>
-            <ul>
-                <li>خلي الاسم واضح ويعبر عن المشروع، مثل: <code>portfolio-website</code> أو <code>todo-app</code>.</li>
-                <li>تجنبي المسافات، واستخدمي الشرطات <code>-</code> بين الكلمات.</li>
-                <li>استخدمي حروف صغيرة لتكون الأسماء أسهل في القراءة والمشاركة.</li>
-            </ul>
-            <div class="code-block">
-Good:  ecommerce-product-catalog<br>
-Bad:   project123
-            </div>
-        </div>
-
-        <!-- Slide 7: Summary + Image -->
-        <div class="slide">
-            <h2>Ready to Create Yours?</h2>
-            <p class="small-text">
-                اختاري اسم واضح، حددي Public أو Private، أضيفي README وملف .gitignore، وابدئي برفع مشروعك. 
-            </p>
-            <img src="images/github-repo-overview.png" alt="GitHub repository overview" class="topic-img">
-        </div>
+          
 
         <!-- Navigation -->
         <div class="navigation">
