@@ -29,7 +29,7 @@
 
         // Home button function
         function goToHome() {
-            window.open('index.html', '_blank');
+            window.open('../index.html', '_blank');
         }
 
         // Keyboard navigation

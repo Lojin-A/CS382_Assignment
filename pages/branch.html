@@ -6,7 +6,7 @@
     <!-- Font Awesome (للأيقونات) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- ملف CSS الأصلي -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     
     <!-- تعديلات بسيطة جداً (دون المساس بالـ CSS الأصلي) -->
     <style>
@@ -41,25 +41,6 @@
         #slide5, #slide6 {
             padding-bottom: 100px !important;
         }
-        /* الأزرار: فقط أيقونات بدون نص */
-        .navigation button {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0;
-        }
-        .navigation button i {
-            margin: 0;
-            font-size: 1.2rem;
-        }
-        /* إخفاء النص مع الاحتفاظ به للـ accessibility (اختياري) */
-        .navigation button span {
-            display: none;
-        }
     </style>
     
     <title>Branching & Collaboration - GitHub</title>
@@ -68,7 +49,7 @@
     <div class="overlay"></div>
     <div class="backgraund">
         <video id="Video" autoplay loop muted playsinline>
-            <source src="media/Video.mp4" type="video/mp4">
+            <source src="../assets/media/Video.mp4" type="video/mp4">
         </video>
     </div>
 
@@ -321,6 +302,6 @@ docs/update-readme
     </div>
 
     <!-- JavaScript -->
-    <script src="js/script.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
 </body>
 </html>
