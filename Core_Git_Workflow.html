@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Git Workflow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .float-icon { 
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #4ac26b;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .list-unstyled { list-style: none; padding-left: 0; }
+        .list-unstyled li { margin-bottom: 12px; }
+
+        .icon-green { color: #4ac26b; width: 25px; }
+
+        /* تنسيق الصورة يسار والبوكس يمين */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .left-side img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            max-height: 300px;
+            margin-bottom: 45px;
+        }
+
+        .code-block { 
+            padding: 15px; 
+            border-radius: 12px; 
+            font-family: monospace; 
+            font-size: 1rem; 
+            backdrop-filter: blur(6px); 
+            overflow-x: auto;
+         }
+
+         /* last slide design */
+.comparison-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+.box {
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid;
+    width: 80%;
+    background-color: #f6f8fa;
+}
+
+.box-chaos {
+    background-color: #ffebe9;
+    border-color: #ff8182;
+}
+
+.box-success {
+    background-color: #dafbe1;
+    border-color: #4ac26b;
+}
+
+.box h4 {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chaos-text {
+    color: #cf222e;
+    font-weight: 600;
+}
+
+.success-text {
+    color: #1a7f37;
+    font-weight: 600;
+}
+
+.code-block {
+    background-color: #eaeef2;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-family: monospace;
+    display: inline-block;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Video -->
+    <div class="overlay"></div>
+    <div class="background-container">
+        <video autoplay loop muted>
+            <source src="media/Video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Slides Container -->
+    <div class="slide-container">
+
+        <!-- Home Button -->
+        <div class="home-btn" onclick="goToHome()" style="z-index: 101;">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+                 alt="GitHub Logo" class="github-logo">
+        </div>
+
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <i class="fas fa-code-branch float-icon"></i>
+            <h1>Core Git Workflow</h1>
+            <p class="subtitle">The Essential Steps of Working with Git</p>
+            <p class="small-text" style="color: #569ef0;">Rimas Alharbi</p>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <h2>1. Check Status</h2>
+            <ul class="list-unstyled">
+                <li><i class="fas fa-eye icon-green"></i>
+                    Shows the current state of your project</li>
+                <li><i class="fas fa-file icon-green"></i>
+                    Detects new, modified, or deleted files</li>
+                <li><i class="fas fa-info-circle icon-green"></i>
+                    Helps you understand what needs to be added or committed</li>
+            </ul>
+
+            <div class="two-column">
+                <div class="left-side">
+                    <img src="media/Git_status1.png" alt="Git Status Example">
+                </div>
+
+                <div class="right-side">
+                    <div class="code-block">
+                        git status
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <h2>2. Add Files</h2>
+            <ul class="list-unstyled">
+                <li><i class="fas fa-plus-circle icon-green"></i>
+                    Moves files to the Staging Area</li>
+                <li><i class="fas fa-layer-group icon-green"></i>
+                    Prepares files for the next commit</li>
+            </ul>
+
+            <div class="two-column">
+                <div class="left-side">
+                    <img src="media/Git_add.png" alt="Git Add Example">
+                </div>
+
+                <div class="right-side">
+                    <div class="code-block">
+                        git add .<br>
+                        git add file.html
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide">
+            <h2>3. Commit Changes</h2>
+            <ul class="list-unstyled">
+                <li><i class="fas fa-save icon-green"></i>
+                    Saves a snapshot of your project</li>
+                <li><i class="fas fa-pen icon-green"></i>
+                    Requires a clear and meaningful message</li>
+            </ul>
+            
+            <div class="two-column">
+                <div class="left-side">
+                    <img src="media/Git_commit.png" alt="Git Commit Example">
+                </div>
+
+                <div class="right-side">
+                    <div class="code-block">
+                        git commit -m "Message"
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide">
+            <h2>4. Push to GitHub</h2>
+            <ul class="list-unstyled">
+                <li><i class="fas fa-cloud-upload-alt icon-green"></i>
+                    Uploads your commits to GitHub</li>
+                <li><i class="fas fa-globe icon-green"></i>
+                    Makes your work available to your team</li>
+            </ul>
+
+            <div class="code-block">git push</div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="slide">
+            <h2>Commit Message Tips</h2>
+            <p><i class="fas fa-check icon-green"></i>Be clear and specific <i class="fas fa-check icon-green"></i>Describe what changed and why <i class="fas fa-check icon-green"></i>Avoid vague messages </p>
+           
+<div class="comparison-container">
+    
+    <!-- BAD COMMIT MESSAGES -->
+    <div class="box box-chaos">
+        <h4 class="chaos-text"><i class="fas fa-bomb"></i> Bad Commit Messages</h4>
+        <ul class="list-unstyled" style="font-size: 0.95rem;">
+            <li><i class="fas fa-times-circle chaos-text"></i> "update"</li>
+            <li><i class="fas fa-times-circle chaos-text"></i> "fix"</li>
+            <li><i class="fas fa-times-circle chaos-text"></i> "final version"</li>
+            <li><i class="fas fa-times-circle chaos-text"></i> "changes"</li>
+        </ul>
+    </div>
+
+    <!-- GOOD COMMIT MESSAGES -->
+    <div class="box box-success">
+        <h4 class="success-text"><i class="fas fa-check-circle"></i> Good Commit Messages</h4>
+        <ul class="list-unstyled" style="font-size: 0.95rem;">
+            <li><i class="fas fa-code-branch success-text"></i> Add navigation bar to homepage</li>
+            <li><i class="fas fa-history success-text"></i> Fix login validation bug</li>
+            <li><i class="fas fa-layer-group success-text"></i> Update README with setup steps</li>
+            <li><i class="fas fa-pen success-text"></i> Refactor CSS for readability</li>
+        </ul>
+    </div>
+
+</div>
+
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button id="prevBtn" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <span class="slide-counter">
+                <span id="currentSlide">1</span> / 6
+            </span>
+
+            <button id="nextBtn" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
