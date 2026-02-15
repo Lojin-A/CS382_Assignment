@@ -2,60 +2,121 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Presentation - Index</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <link rel="stylesheet" href="css/style.css">
+
+    <title>GitHub Presentation - Index</title> 
 
     <style>
-body {
-  background-color: #000a1f;
-}
+    video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100vw;
+        min-height: 100vh;
+        object-fit: cover;
+        z-index: -1;
+    }
 
-.container {
-  margin: 100px 0 0 200px;
-  width: 70%;
-  height: 450px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
+    .overlay {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(31, 58, 107, 0.428);
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
 
-.container img {
-  width: 10%;
-  height: 100%;
-  object-fit:cover;
-  border-radius: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.684);
-  transition: all ease-in-out 0.5s;
-}
+    .backgraund {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(31, 58, 107, 0.7);
+        top: 0;
+        left: 0;
+        z-index: -10;
+    }
 
-.container img:hover {
-  width: 25%;
-}
-a{
-    display: none;
+    body {
+        background-color: #000a1f;
+        position: relative; 
+        overflow: hidden;    
+        font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+
+      }
+
+    .container {
+        margin: 100px 0 0 200px;
+        width: 70%;
+        height: 450px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        position: relative;
+        z-index: 1;          
+    }
+
+    .container a {
+        flex: 0 0 10%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container img {
+        width: 70%;         
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid rgba(255, 255, 255, 0.684);
+        filter: blur(1px);              
+         opacity: 0.7;  
+        transition: all ease-in-out 0.5s;
+        display: block; 
+    }
+
+    .container img:hover {
+        width: 750%;
+        z-index: 100;       
+        position: relative;
+        filter: none;                   
+    opacity: 1;
+    }
+    h1{
+        color: white;
+    font-size: 2.6rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 40px 0 60px 0;
+    text-shadow: 0 0 15px rgba(255,255,255,0.6);
+    position: relative;
+    z-index: 20;
+    line-height: .05;           
 }
     </style>
 </head>
 <body>
-
     <div class="overlay"></div>
     <div class="backgraund">
         <video autoplay loop muted>
-            <source src="media/Video.mp4" type="video/mp4">
+            <source src="assets/media/Video.mp4" type="video/mp4">
         </video>
     </div>
-     <div class="container">
-    <a href="intro.html"><img src="media/1.jpeg"></a>
-    <a href="local-environment-slides.html"><img src="media/2.jpeg"></a>
-    <a href="file3.html"><img src="media/3.jpeg"></a>
-    <a href="file4.html"><img src="media/4.jpeg"></a>
-    <a href="file5.html"><img src="media/5.jpeg"></a>
-    <a href="file5.html"><img src="media/5.jpeg"></a>
-    <a href="file5.html"><img src="media/5.jpeg"></a>y
+    <h1><i class="fab fa-github"></i> How to create a web project</h1>
+    <h1>by using GitHub</h1>
+
+    <div class="container">
+        <a href="pages/intro.html"><img src="assets/media/1.jpeg" /></a>
+        <a href="pages/Topic2VersionControl.html"><img src="assets/media/2.jpeg" /></a>
+        <a href="pages/Repository.html"><img src="assets/media/3.jpeg" /></a>
+        <a href="pages/local-environment-slides.html"><img src="assets/media/4.jpeg" /></a>
+        <a href="pages/Core_Git_Workflow.html"><img src="assets/media/5.jpeg" /></a>
+        <a href="pages/branch.html"><img src="assets/media/6.jpeg" /></a>
+        <a href="pages/gitPull.html"><img src="assets/media/8.jpeg" /></a>
+         <a href="pages/topic7.html"><img src="assets/media/7.jpeg" /></a>
+
     </div>
 </body>
 </html>

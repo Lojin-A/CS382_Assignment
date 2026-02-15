@@ -29,7 +29,7 @@
 
         // Home button function
         function goToHome() {
-            window.open('https://github.com/Lojin-A/CS382_Assignment/blob/main/index.html', '_blank');
+            window.open('../index.html', '_blank');
         }
 
         // Keyboard navigation

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Git Pull Workflow</title>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="backgraund">
+        <video autoplay loop muted>
+            <source src="../assets/media/Video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="slide-container">
+        <div class="home-btn" onclick="goToHome()" style="z-index: 101;">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+                 alt="GitHub Logo" class="github-logo">
+        </div>
+
+        <div class="slide active">
+            <h1> <i class="fas fa-cloud-download-alt" style="color: #0969da;"></i>
+                 Staying Up-to-Date</h1>
+            <p class="subtitle">The Git Pull & Merge Workflow</p>
+            <p class="small-text">Lojin Ayesh</p>
+        </div>
+
+        <div class="slide">
+            <h2>Update Main</h2>
+            
+            <p class="small-text" style="margin-bottom: 5px;"><strong>1. Switch to Main:</strong> Leave your current branch.</p>
+            <div class="code-block" style="margin-top: 5px; padding: 15px;">
+git checkout main
+            </div>
+
+            <p class="small-text" style="margin-bottom: 5px;"><strong>2. Pull Changes:</strong> Download updates from GitHub.</p>
+            <div class="code-block" style="margin-top: 5px; padding: 15px;">
+git pull
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Merge Updates</h2>
+
+            <p class="small-text" style="margin-bottom: 5px;"><strong>3. Return to your Branch:</strong> Go back to your work.</p>
+            <div class="code-block" style="margin-top: 5px; padding: 15px;">
+git checkout your-branch-name
+            </div>
+
+            <p class="small-text" style="margin-bottom: 5px;"><strong>4. Merge Main:</strong> Apply the updates to your code.</p>
+            <div class="code-block" style="margin-top: 5px; padding: 15px;">
+git merge main
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Workflow Summary</h2>
+            <p class="small-text">Recap of the commands to update your environment:</p>
+            <div class="code-block" style="font-size: 1rem;">
+git checkout main<br>
+git pull<br>
+git checkout your-branch-name<br>
+git merge main
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button id="prevBtn" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <span class="slide-counter">
+                <span id="currentSlide">1</span> / 4
+            </span>
+            <button id="nextBtn" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

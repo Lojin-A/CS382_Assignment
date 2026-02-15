@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome (للأيقونات) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- ملف CSS الأصلي -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <!-- تعديلات بسيطة جداً (دون المساس بالـ CSS الأصلي) -->
+    <style>
+        /* زيادة ارتفاع الصندوق الأبيض */
+        .slide-container {
+            height: 700px !important;
+        }
+        /* ضبط المسافات الداخلية للسلايدات */
+        .slide {
+            padding: 40px 40px 80px 40px !important;
+            overflow-y: auto !important;
+            box-sizing: border-box !important;
+        }
+        /* إعادة تعريف الـ small-text للاسم */
+        .small-text {
+            color: #57606a !important;
+            font-size: 1rem !important;
+            margin-bottom: 0 !important;
+        }
+        /* اسم المستخدم في السلايد الأول (توسيط سفلي) */
+        #slide1 .small-text {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-style: italic;
+            font-weight: 400;
+            color: #57606a;
+            letter-spacing: 1px;
+        }
+        /* تحسينات للسلايد 5 و 6 */
+        #slide5, #slide6 {
+            padding-bottom: 100px !important;
+        }
+    </style>
+    
+    <title>Branching & Collaboration - GitHub</title>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="backgraund">
+        <video id="Video" autoplay loop muted playsinline>
+            <source src="../assets/media/Video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="slide-container">
+        <!-- Home Button -->
+        <div class="home-btn" onclick="goToHome()">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+                 alt="GitHub Logo" class="github-logo">
+        </div>
+
+        <!-- السلايد 1 : What are branches? -->
+        <div class="slide active" id="slide1" style="position: relative;">
+            <h1>Branching & Collaboration.</h1>
+            <p class="subtitle">Working together without conflicts</p>
+            <h2>What are branches?</h2>
+            <ul>
+                <li>Parallel lines of development in Git</li>
+                <li>Work on features independently</li>
+                <li>Keep the main branch stable</li>
+                <li>Enable team collaboration</li>
+                <li>Isolate experimental work</li>
+            </ul>
+            
+            <div class="branch-visual">
+                <div class="branch main-branch">main</div>
+                <span style="color: #57606a; font-size: 1.5rem;">→</span>
+                <div class="branch feature-branch">feature/login</div>
+                <div class="branch feature-branch">feature/header</div>
+                <div class="branch feature-branch">bugfix/typo</div>
+            </div>
+            
+            <!-- اسمك في منتصف الأسفل -->
+            <div class="small-text">
+                Wateen Alhaddad
+            </div>
+        </div>
+
+        <!-- السلايد 2 : Creating a feature branch -->
+        <div class="slide" id="slide2">
+            <h2>Creating a Feature Branch</h2>
+            <p class="small-text">Isolate your work from the main codebase</p>
+            <div class="code-block">
+# Create and switch to new branch in one command
+git checkout -b feature/your-feature-name
+
+# Or do it in two separate steps:
+git branch feature/your-feature-name
+git checkout feature/your-feature-name
+            </div>
+            <div class="real-example">
+                <h3>Example from this presentation:</h3>
+                <p><strong>Branch name:</strong> 
+                    <span style="background: #e6e6e6; padding: 3px 8px; border-radius: 4px; font-family: monospace;">wateen-work</span>
+                </p>
+                <div class="code-block" style="margin: 10px 0 0 0; font-size: 1rem; padding: 15px;">
+git checkout -b wateen-work
+                </div>
+                <p style="margin-top: 10px;">This branch contains all the slides you are viewing now.</p>
+            </div>
+            <div class="branch-visual">
+                <div class="branch main-branch">main</div>
+                <span style="color: #2da44e; font-size: 1.5rem;">→</span>
+                <div class="branch my-branch">wateen-work</div>
+            </div>
+        </div>
+
+        <!-- السلايد 3 : Working on Your Branch (مبسط) -->
+        <div class="slide" id="slide3">
+            <h2>Working on Your Branch</h2>
+            <p class="small-text">Simple workflow steps</p>
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px; width: 100%;">
+                <div style="display: flex; align-items: center; gap: 15px; background: #f6f8fa; padding: 15px; border-radius: 8px;">
+                    <span style="background: #0969da; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">1</span>
+                    <span style="font-weight: bold; color: #24292e;">Make changes</span>
+                    <span style="color: #57606a;">Edit your files</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px; background: #f6f8fa; padding: 15px; border-radius: 8px;">
+                    <span style="background: #0969da; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">2</span>
+                    <span style="font-weight: bold; color: #24292e;">Stage changes</span>
+                    <span style="color: #57606a;">git add .</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px; background: #f6f8fa; padding: 15px; border-radius: 8px;">
+                    <span style="background: #0969da; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">3</span>
+                    <span style="font-weight: bold; color: #24292e;">Commit</span>
+                    <span style="color: #57606a;">git commit -m "message"</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px; background: #f6f8fa; padding: 15px; border-radius: 8px;">
+                    <span style="background: #0969da; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">4</span>
+                    <span style="font-weight: bold; color: #24292e;">Push</span>
+                    <span style="color: #57606a;">git push origin branch-name</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- السلايد 4 : Merging into Main -->
+        <div class="slide" id="slide4">
+            <h2>Merging into Main</h2>
+            <p class="small-text">Integrating your completed work</p>
+            <div class="branch-visual" style="margin-bottom: 25px;">
+                <div class="branch feature-branch">feature</div>
+                <span style="color: #0969da; font-size: 2rem;">→</span>
+                <div class="branch main-branch">main</div>
+            </div>
+            <div class="code-block">
+# Method 1: Merge via command line
+git checkout main
+git pull origin main
+git merge wateen-work
+git push origin main
+
+# Method 2: Pull Request (recommended for teams)
+# Create PR on GitHub → Review → Click "Merge pull request"
+            </div>
+            <div style="margin-top: 20px; padding: 15px; background: #fff3bf; border-radius: 10px;">
+                <span style="color: #856404; font-weight: bold;">⚠️ Merge conflicts</span>
+                <p style="margin-top: 5px; font-size: 0.95rem;">
+                    If two people edit the same file, Git needs your help to choose which changes to keep.
+                    Conflicts must be resolved manually before merging.
+                </p>
+            </div>
+        </div>
+
+        <!-- السلايد 5 : Pull Requests -->
+        <div class="slide" id="slide5">
+            <h2>Pull Requests</h2>
+            <p class="small-text">Collaborative code review process</p>
+            <div class="pr-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Push Branch</h4>
+                    <p>Push your feature branch to GitHub</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Create PR</h4>
+                    <p>Click "Compare & pull request"</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Review</h4>
+                    <p>Team reviews and comments on code</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Merge</h4>
+                    <p>Click "Merge pull request"</p>
+                </div>
+            </div>
+            <div style="margin-top: 20px;">
+                <h3 style="color: #24292e; font-size: 1.2rem; margin-bottom: 10px; text-align: left;">Why use Pull Requests?</h3>
+                <ul>
+                    <li>Code review catches bugs before they reach main</li>
+                    <li>Documentation of changes and decisions</li>
+                    <li>Team awareness of what others are working on</li>
+                    <li>Quality control gatekeeper</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- السلايد 6 : Best Practices -->
+        <div class="slide" id="slide6">
+            <h2>Best Practices</h2>
+            <p class="small-text">Do's and Don'ts of branching</p>
+            <div class="comparison-grid">
+                <div class="do-box">
+                    <h4>✓ Do This</h4>
+                    <ul>
+                        <li>Use descriptive branch names</li>
+                        <li>Keep branches short-lived</li>
+                        <li>Sync with main regularly</li>
+                        <li>Delete merged branches</li>
+                        <li>Write clear commit messages</li>
+                    </ul>
+                </div>
+                <div class="dont-box">
+                    <h4>✗ Avoid This</h4>
+                    <ul>
+                        <li>Commit directly to main</li>
+                        <li>Vague names (test, temp, new)</li>
+                        <li>Long-running feature branches</li>
+                        <li>Merge without review</li>
+                        <li>Forget to pull latest changes</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="folder-tree" style="margin-top: 20px;">
+# Branch naming convention examples:
+feature/login-page
+feature/shopping-cart
+bugfix/header-error
+hotfix/security-patch
+docs/update-readme
+            </div>
+        </div>
+
+        <!-- السلايد 7 : Complete Branching Workflow Summary -->
+        <div class="slide" id="slide7">
+            <h2>Complete Branching Workflow</h2>
+            <p class="small-text">From start to finish</p>
+            <div style="display: flex; flex-direction: column; gap: 12px; margin: 15px 0;">
+                <div class="workflow-step">
+                    <span class="step-badge">1</span>
+                    <span class="command-text">git checkout -b feature/new</span>
+                    <span>Create and switch to branch</span>
+                </div>
+                <div class="workflow-step">
+                    <span class="step-badge">2</span>
+                    <span class="command-text">git add . && git commit -m "message"</span>
+                    <span>Stage and commit changes</span>
+                </div>
+                <div class="workflow-step">
+                    <span class="step-badge">3</span>
+                    <span class="command-text">git push origin feature/new</span>
+                    <span>Push to GitHub</span>
+                </div>
+                <div class="workflow-step">
+                    <span class="step-badge">4</span>
+                    <span class="command-text">Create Pull Request</span>
+                    <span>Review and merge on GitHub</span>
+                </div>
+                <div class="workflow-step">
+                    <span class="step-badge">5</span>
+                    <span class="command-text">git branch -d feature/new</span>
+                    <span>Delete branch after merge</span>
+                </div>
+            </div>
+            <div class="summary-box">
+                <h3>Key Takeaway</h3>
+                <p>
+                    Always create a new branch for each feature or bug fix. 
+                    This keeps main stable and enables smooth team collaboration.
+                </p>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons (فقط أيقونات) -->
+        <div class="navigation">
+            <button id="prevBtn" onclick="changeSlide(-1)" aria-label="Previous">
+                <i class="fas fa-chevron-left"></i>
+                <span style="display: none;">Previous</span>
+            </button>
+            <span class="slide-counter">
+                <span id="currentSlide">1</span> / 7
+            </span>
+            <button id="nextBtn" onclick="changeSlide(1)" aria-label="Next">
+                <i class="fas fa-chevron-right"></i>
+                <span style="display: none;">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/script.js" defer></script>
+</body>
+</html>

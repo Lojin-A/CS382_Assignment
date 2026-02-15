@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Topic 7 - Documentation & Best Practices</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+    /* Unique Styles for the Thank You Slide */
+    .thank-you-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .thank-you-title {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+        background: linear-gradient(to bottom, #1f0761, #8ec5fc);
+        background-clip: text;  
+        color: transparent; 
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+        gap: 15px;
+        width: 100%;
+        max-width: 800px;
+        margin-top: 20px;
+    }
+
+    .member-card {
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid #e0c3fc;
+        padding: 10px 20px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 15px rgba(224, 195, 252, 0.3);
+        transition: all 0.3s ease;
+        cursor: default;
+    }
+
+    .member-card:hover {
+        transform: translateY(-5px);
+        background: #fff;
+        box-shadow: 0 8px 20px rgba(31, 7, 97, 0.15);
+        border-color: #1f0761;
+    }
+
+    .member-name {
+        color: #1f0761;
+        font-weight: bold;
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .member-id {
+        background-color: #f0f4f8;
+        color: #57606a;
+        padding: 4px 10px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-family: 'Consolas', monospace;
+        border: 1px solid #d0d7de;
+    }
+    
+    .heart-icon {
+        font-size: 2rem;
+        margin-top: 10px;
+        animation: beat 1.5s infinite;
+    }
+
+    @keyframes beat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+    }
+</style>
+  
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <div class="backgraund">
+    <video autoplay loop muted>
+      <source src="../assets/media/Video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="slide-container">
+    <div class="home-btn" onclick="goToHome()" style="z-index: 101;">
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+           alt="GitHub Logo" class="github-logo">
+    </div>
+
+    <!-- Slide 1 -->
+    <div class="slide active">
+      <h1>📘 Documentation & Best Practices</h1>
+      <p class="subtitle">How to keep your repository clear, organized, and easy to understand.</p>
+      <p class="small-text">Layan Alharbi</p>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+      <h2>What is README.md?</h2>
+      <ul>
+        <li><strong>README.md</strong> explains what your project is.</li>
+        <li>It is the first thing shown on GitHub repository pages.</li>
+        <li>Written in <strong>Markdown</strong> (.md).</li>
+        <li>Helps others understand how to run and use the project.</li>
+      </ul>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide"style="padding-bottom:20px;">
+      <h2>Simple README Structure</h2>
+      <ul>
+        <li><span class="highlight">Project Title</span> + short description</li>
+        <li><span class="highlight">Features</span> (what the project can do)</li>
+        <li><span class="highlight">How to Run</span> (steps for the user)</li>
+        <li><span class="highlight">Author</span> and contact (optional)</li>
+      </ul>
+
+      <div class="code-block">
+# Web Project Using GitHub<br><br>
+
+## Overview<br>
+CS382 presentation on Git & GitHub workflow.<br><br>
+
+## Includes<br>
+- Repository setup<br>
+- Git commands<br>
+- Branching<br>
+- Documentation<br><br>
+
+## Team<br>
+Shahad, Lojin, Raneem,<br>
+Layan, Rimas, Khawlah,<br>
+Watin, Norah
+</div>
+    </div>
+
+    <!-- Slide 4 -->
+<div class="slide">
+  <h2>Why Documentation Matters</h2>
+  <p class="small-text">
+    Documentation helps people understand your project faster and reduces mistakes.
+  </p>
+
+  <div class="code-block" style="max-width: 760px;">
+    <div style="display:flex; justify-content:space-between; gap:30px;">
+
+      <!-- LEFT: With -->
+      <div style="width:50%; text-align:left;">
+        <h3 style="margin-bottom:10px; color:#24292e;">
+          ✅ With Documentation
+        </h3>
+        <ul style="padding-left: 20px; margin: 0;">
+          <li>Easy to understand</li>
+          <li>Easy collaboration</li>
+          <li>Professional appearance</li>
+          <li>Faster onboarding</li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: Without -->
+      <div style="width:50%; text-align:left;">
+        <h3 style="margin-bottom:10px; color:#24292e;">
+          ❌ Without Documentation
+        </h3>
+        <ul style="padding-left: 20px; margin: 0;">
+          <li>Confusion</li>
+          <li>Wasted time</li>
+          <li>Hard maintenance</li>
+          <li>Unprofessional</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <p class="small-text" style="margin-top: 10px;">
+    <span class="highlight">Key idea:</span> A clear README saves time and makes teamwork easier.
+  </p>
+</div>
+    <!-- Slide 5 -->
+    <div class="slide">
+      <h2>Best Practices & Mistakes</h2>
+      <ul>
+        <li><strong>Write clear commit messages</strong> (not “update” or "Fix")</li>
+        <li><strong>Use branches</strong> for features, merge when ready</li>
+        <li><strong>Keep main stable</strong> (don’t push unfinished work)</li>
+        <li><strong>Use .gitignore</strong> to avoid uploading unnecessary files</li>
+      </ul>
+
+      <div class="code-block">
+Good commit messages:<br>
+✅ Added contact form validation<br>
+✅ Fixed navbar responsive layout<br>
+✅ Updated README with run steps
+      </div>
+    </div>
+    <div class="slide">
+        <div class="thank-you-content">
+            <h1 class="thank-you-title">Thank You!</h1>
+            <p class="subtitle">Designed & Presented by:</p>
+            
+            <div class="team-grid">
+                <div class="member-card">
+                    <span class="member-name">Shahad Alromi</span><span class="member-id">44150097</span>
+                </div>
+                <div class="member-card">
+                    <span class="member-name">Lojin Ayesh</span><span class="member-id">441500300</span>
+                </div>
+                <div class="member-card">
+                    <span class="member-name">Raneem Saad</span><span class="member-id">441500506</span>
+                </div>
+                <div class="member-card">
+                    <span class="member-name">Layan Alharbi</span><span class="member-id">441500004</span>
+                </div>
+                <div class="member-card">
+                    <span class="member-name">Rimas Alharbi</span><span class="member-id">441500372</span>
+                </div>
+                <div class="member-card">
+                    <span class="member-name">Khawlah Ibrahim</span><span class="member-id">441500357</span>
+                </div>
+                <div class="member-card">
+                    <span class="member-name">Watin Alhaddad</span><span class="member-id">441500484</span>
+                </div>
+                <div class="member-card">
+                    <span class="member-name">Norah Alhosain</span><span class="member-id">4311085</span>
+                </div>
+            </div>
+            
+            <div class="heart-icon">💜</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+      <button id="prevBtn" onclick="changeSlide(-1)">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <span class="slide-counter">
+        <span id="currentSlide">1</span> / 6
+      </span>
+
+      <button id="nextBtn" onclick="changeSlide(1)">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>
