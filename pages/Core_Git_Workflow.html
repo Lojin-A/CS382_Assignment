@@ -58,7 +58,7 @@
     justify-content: center;
     gap: 25px;
     margin-top: 25px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .box {
@@ -67,6 +67,8 @@
     border: 1px solid;
     width: 80%;
     background-color: #f6f8fa;
+    margin-top: 0px;
+
 }
 
 .box-chaos {
@@ -134,7 +136,19 @@
             <p class="small-text" style="color: #569ef0;">Rimas Alharbi</p>
         </div>
 
-        <!-- Slide 2 -->
+       <!-- Slide 2 -->
+       <div class="slide">
+            <h2>Git Workflow</h2>
+            <p class="small-text">Basic Git commands used in every workflow: </p>
+            <div class="code-block" style="font-size: 1rem;">
+              git status<br>
+              git add<br>
+              git commit<br>
+              git push
+            </div>
+        </div> 
+
+        <!-- Slide 3 -->
         <div class="slide">
             <h2>1. Check Status</h2>
             <ul class="list-unstyled">
@@ -148,7 +162,7 @@
 
             <div class="two-column">
                 <div class="left-side">
-                    <img src="../assets/media/Git_status1.png" alt="Git Status Example">
+                    <img src="../assets/media/Git_status.png" alt="Git Status Example">
                 </div>
 
                 <div class="right-side">
@@ -159,7 +173,7 @@
             </div>
         </div>
 
-        <!-- Slide 3 -->
+        <!-- Slide 4 -->
         <div class="slide">
             <h2>2. Add Files</h2>
             <ul class="list-unstyled">
@@ -183,7 +197,7 @@
             </div>
         </div>
 
-        <!-- Slide 4 -->
+        <!-- Slide 5 -->
         <div class="slide">
             <h2>3. Commit Changes</h2>
             <ul class="list-unstyled">
@@ -195,7 +209,7 @@
             
             <div class="two-column">
                 <div class="left-side">
-                    <img src="../assets/media/Git_commit.png" alt="Git Commit Example">
+                    <img src="../assets/media/git_commit.png" alt="Git Commit Example">
                 </div>
 
                 <div class="right-side">
@@ -206,21 +220,8 @@
             </div>
             
         </div>
-
-        <!-- Slide 5 -->
-        <div class="slide">
-            <h2>4. Push to GitHub</h2>
-            <ul class="list-unstyled">
-                <li><i class="fas fa-cloud-upload-alt icon-green"></i>
-                    Uploads your commits to GitHub</li>
-                <li><i class="fas fa-globe icon-green"></i>
-                    Makes your work available to your team</li>
-            </ul>
-
-            <div class="code-block">git push</div>
-        </div>
-
-        <!-- Slide 6 -->
+        
+            <!-- Slide 6 -->
         <div class="slide">
             <h2>Commit Message Tips</h2>
             <p><i class="fas fa-check icon-green"></i>Be clear and specific <i class="fas fa-check icon-green"></i>Describe what changed and why <i class="fas fa-check icon-green"></i>Avoid vague messages </p>
@@ -251,7 +252,21 @@
 
 </div>
 
+    </div>
+
+        <!-- Slide 7 -->
+        <div class="slide">
+            <h2>4. Push to GitHub</h2>
+            <ul class="list-unstyled">
+                <li><i class="fas fa-cloud-upload-alt icon-green"></i>
+                    Uploads your commits to GitHub</li>
+                <li><i class="fas fa-globe icon-green"></i>
+                    Makes your work available to your team</li>
+            </ul>
+
+            <div class="code-block">git push</div>
         </div>
+
 
         <!-- Navigation -->
         <div class="navigation">
@@ -260,7 +275,7 @@
             </button>
 
             <span class="slide-counter">
-                <span id="currentSlide">1</span> / 6
+                <span id="currentSlide">1</span> / 7
             </span>
 
             <button id="nextBtn" onclick="changeSlide(1)">
