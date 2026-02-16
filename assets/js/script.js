@@ -27,16 +27,13 @@
             showSlide(currentSlide + direction);
         }
 
-        // Home button function
         function goToHome() {
-            window.open('../index.html', '_blank');
+            window.open('../index.html', '_self');
         }
 
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') changeSlide(-1);
             if (e.key === 'ArrowRight') changeSlide(1);
         });
 
-        // Initialize
         showSlide(0);
